@@ -31,7 +31,16 @@ class _SimpleScreenState extends State<SimpleScreen> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text('Monuments 3D view'),
+        title: Text('Hello'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () {
+              onUnityCreatedd("1");
+            },
+          ),
+          // add more IconButton
+        ],
       ),
       body: Card(
           margin: const EdgeInsets.all(0),
@@ -82,13 +91,10 @@ class _SimpleScreenState extends State<SimpleScreen> {
     );
   }
 
-  /*void setRotationSpeed(String speed) {
-    _unityWidgetController.postMessage(
-      'Cube',
-      'SetRotationSpeed',
-      speed,
-    );
-  }*/
+  void onUnityCreatedd(String a) {
+    print("sroeuihgoiwheirhgpiwhepri");
+    _unityWidgetController.postMessage("GameObject", "LoadScene", a);
+  }
 
   void onUnityMessage(message) {
     print('Received message from unity: ${message.toString()}');

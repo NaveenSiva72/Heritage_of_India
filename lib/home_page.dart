@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_universe/detail_page.dart';
+import 'package:flutter_universe/plainsurfaceDetecture.dart';
 import 'constants.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'artifacts_home_page.dart';
@@ -47,7 +48,14 @@ class _HomePageState extends State<HomePage> {
                         items: items.map((String items) {
                           return DropdownMenuItem(
                             value: items,
-                            child: Text(items),
+                            child: Text(
+                              items,
+                              style: TextStyle(
+                                fontFamily: 'Avenir',
+                                fontSize: 24,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
                           );
                         }).toList(),
                         onChanged: (String newValue) {
@@ -147,7 +155,13 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Hero(
                             tag: planets[index].position,
-                            child: Image.asset(planets[index].iconImage),
+                            // child: Image.asset(planets[index].iconImage),
+                            child: ClipRRect(
+                              child: Image.asset(
+                                planets[index].iconImage,
+                              ),
+                              borderRadius: BorderRadius.circular(100),
+                            ),
                           ),
                           Positioned(
                             right: 24,
@@ -190,7 +204,12 @@ class _HomePageState extends State<HomePage> {
             ),
             IconButton(
               icon: Image.asset('assets/search_icon.png'),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SimpleScreen()),
+                );
+              },
             ),
             IconButton(
               icon: Image.asset('assets/profile_icon.png'),

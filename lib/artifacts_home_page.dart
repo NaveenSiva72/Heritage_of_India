@@ -3,6 +3,7 @@ import 'artifacts_data_page.dart';
 import 'constants.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'artifacts_detail_page.dart';
+import 'home_page.dart';
 
 class artifactHomePage extends StatefulWidget {
   @override
@@ -10,6 +11,9 @@ class artifactHomePage extends StatefulWidget {
 }
 
 class _artifactHomePageState extends State<artifactHomePage> {
+  List<String> items = ["Monuments", "Artifacts"];
+  String selectedItem = "Artifacts";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +43,20 @@ class _artifactHomePageState extends State<artifactHomePage> {
                       ),
                       textAlign: TextAlign.left,
                     ),
+                    DropdownButton(
+                        value: selectedItem,
+                        items: items.map((String items) {
+                          return DropdownMenuItem(
+                            value: items,
+                            child: Text(items),
+                          );
+                        }).toList(),
+                        onChanged: (String newValue) {
+                          setState(() {
+                            selectedItem = newValue;
+                            onSelected(context, selectedItem);
+                          });
+                        }),
                   ],
                 ),
               ),
@@ -183,5 +201,15 @@ class _artifactHomePageState extends State<artifactHomePage> {
         ),
       ),
     );
+  }
+
+  onSelected(BuildContext context, selectedItem) {
+    switch (selectedItem) {
+      case "Monuments":
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => HomePage()));
+
+        break;
+    }
   }
 }
