@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_universe/home_page.dart';
 import 'artifacts_data_page.dart';
-import 'constants.dart';
+import 'color.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'artifacts_detail_page.dart';
-import 'home_page.dart';
 
 class artifactHomePage extends StatefulWidget {
   @override
@@ -11,9 +11,8 @@ class artifactHomePage extends StatefulWidget {
 }
 
 class _artifactHomePageState extends State<artifactHomePage> {
-  List<String> items = ["Monuments", "Artifacts"];
-  String selectedItem = "Artifacts";
-
+  List<String> items = ["Monuments", "Artefacts"];
+  String selectedItem = "Monuments";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,21 +33,30 @@ class _artifactHomePageState extends State<artifactHomePage> {
                 child: Column(
                   children: <Widget>[
                     Text(
-                      'Artifacts',
+                      'Artefacts',
                       style: TextStyle(
-                        fontFamily: 'Avenir',
+                        fontFamily: 'Montserrat',
                         fontSize: 44,
-                        color: const Color(0xffffffff),
+                        color: Colors.white,
                         fontWeight: FontWeight.w900,
                       ),
                       textAlign: TextAlign.left,
                     ),
+
+                    //dropdown started...............
                     DropdownButton(
                         value: selectedItem,
                         items: items.map((String items) {
                           return DropdownMenuItem(
                             value: items,
-                            child: Text(items),
+                            child: Text(
+                              items,
+                              style: TextStyle(
+                                fontFamily: 'Avenir',
+                                fontSize: 17,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
                           );
                         }).toList(),
                         onChanged: (String newValue) {
@@ -57,6 +65,7 @@ class _artifactHomePageState extends State<artifactHomePage> {
                             onSelected(context, selectedItem);
                           });
                         }),
+                    //dropdown ended..........
                   ],
                 ),
               ),
@@ -100,34 +109,35 @@ class _artifactHomePageState extends State<artifactHomePage> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: <Widget>[
-                                      SizedBox(height: 100),
+                                      SizedBox(height: 130),
                                       Text(
-                                        planets[index].name,
+                                        planets[index].Name,
                                         style: TextStyle(
-                                          fontFamily: 'Avenir',
-                                          fontSize: 44,
-                                          color: const Color(0xff47455f),
+                                          fontFamily: 'Montserrat',
+                                          fontSize: 35,
+                                          color:
+                                              Color.fromARGB(255, 157, 46, 160),
                                           fontWeight: FontWeight.w900,
                                         ),
                                         textAlign: TextAlign.left,
                                       ),
                                       Text(
-                                        'Solar System',
+                                        'Artefacts',
                                         style: TextStyle(
-                                          fontFamily: 'Avenir',
-                                          fontSize: 23,
+                                          fontFamily: 'Montserrat',
+                                          fontSize: 17,
                                           color: primaryTextColor,
                                           fontWeight: FontWeight.w500,
                                         ),
                                         textAlign: TextAlign.left,
                                       ),
-                                      SizedBox(height: 32),
+                                      SizedBox(height: 10),
                                       Row(
                                         children: <Widget>[
                                           Text(
-                                            'Know more',
+                                            'Description',
                                             style: TextStyle(
-                                              fontFamily: 'Avenir',
+                                              fontFamily: 'Montserrat',
                                               fontSize: 18,
                                               color: secondaryTextColor,
                                               fontWeight: FontWeight.w500,
@@ -148,17 +158,21 @@ class _artifactHomePageState extends State<artifactHomePage> {
                           ),
                           Hero(
                             tag: planets[index].position,
-                            child: Image.asset(planets[index].iconImage),
+                            child: Image.asset(
+                              planets[index].iconImage,
+                              width: 180,
+                              height: 250,
+                            ),
                           ),
                           Positioned(
-                            right: 24,
-                            bottom: 60,
+                            right: 20,
+                            bottom: 30,
                             child: Text(
                               planets[index].position.toString(),
                               style: TextStyle(
-                                fontFamily: 'Avenir',
+                                fontFamily: 'Montserrat',
                                 fontSize: 200,
-                                color: primaryTextColor.withOpacity(0.08),
+                                color: primaryTextColor.withOpacity(0.11),
                                 fontWeight: FontWeight.w900,
                               ),
                               textAlign: TextAlign.left,
@@ -181,7 +195,7 @@ class _artifactHomePageState extends State<artifactHomePage> {
           ),
           color: navigationColor,
         ),
-        padding: const EdgeInsets.all(14),
+        padding: const EdgeInsets.all(5),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[

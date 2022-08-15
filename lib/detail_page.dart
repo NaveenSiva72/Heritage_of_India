@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_universe/data.dart';
 import 'constants.dart';
-import 'package:flutter_universe/samplescenepage.dart';
+import 'samplescenepage.dart'; //import 'package:flutter_unity_widget/flutter_unity_widget.dart';
 
 class DetailPage extends StatelessWidget {
   final PlanetInfo planetInfo;
@@ -19,30 +19,6 @@ class DetailPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  /*Padding(
-                    padding: const EdgeInsets.only(right: 32.0),
-
-                    child: Row(
-                      children: [
-
-                        Text(
-                          planetInfo.position.toString(),
-                          style: TextStyle(
-                            fontFamily: 'Avenir',
-                            fontSize: 247,
-                            color: primaryTextColor.withOpacity(0.08),
-                            fontWeight: FontWeight.w900,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                        Image.asset(planetInfo.iconImage),
-
-                      ],
-                    ),
-
-                  ),*/
-                  // Padding(
-                  // padding: EdgeInsets.all(16),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -56,25 +32,21 @@ class DetailPage extends StatelessWidget {
                         ),
                         textAlign: TextAlign.left,
                       ),
-                      //Padding(
-                      // padding: EdgeInsets.symmetric(horizontal: 16),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Image.asset(planetInfo.iconImage),
+                          Image.asset(planetInfo.iconImage,
+                              width: 230), //expected
                         ],
                       ),
-                      //),
                     ],
                   ),
-                  //  ),
-
                   Padding(
                     padding: const EdgeInsets.all(1.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        SizedBox(height: 300),
+                        SizedBox(height: 20),
                         Text(
                           planetInfo.name,
                           style: TextStyle(
@@ -85,31 +57,13 @@ class DetailPage extends StatelessWidget {
                           ),
                           textAlign: TextAlign.left,
                         ),
-                        RaisedButton(
-                          child: Text(
-                            'Login',
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          color: Colors.green,
-                          textColor: Colors.white,
+                        IconButton(
+                          icon: Image.asset('assets/3D.png'),
+                          iconSize: 100,
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SimpleScreen()),
-                            );
+                            PlainSUrfacePgaeRouter(context);
                           },
                         ),
-                        /*Text(
-                          'Solar System',
-                          style: TextStyle(
-                            fontFamily: 'Avenir',
-                            fontSize: 31,
-                            color: primaryTextColor,
-                            fontWeight: FontWeight.w300,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),*/
                         Divider(color: Colors.black38),
                         SizedBox(height: 32),
                         Text(
@@ -135,14 +89,14 @@ class DetailPage extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Avenir',
                         fontSize: 25,
-                        color: const Color(0xff47455f),
+                        color: Color.fromARGB(255, 0, 59, 254),
                         fontWeight: FontWeight.w300,
                       ),
                       textAlign: TextAlign.left,
                     ),
                   ),
                   Container(
-                    height: 250,
+                    height: 100,
                     padding: const EdgeInsets.only(left: 32.0),
                     child: ListView.builder(
                         itemCount: planetInfo.images.length,
@@ -155,7 +109,7 @@ class DetailPage extends StatelessWidget {
                             ),
                             child: AspectRatio(
                                 aspectRatio: 1,
-                                child: Image.network(
+                                child: Image.asset(
                                   planetInfo.images[index],
                                   fit: BoxFit.cover,
                                 )),
@@ -181,5 +135,37 @@ class DetailPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void PlainSUrfacePgaeRouter(BuildContext context) {
+    // UnityWidgetController _unityWidgetController;
+
+    if (planetInfo.position == 1) {
+      print("111111111111111111111111111111111111111");
+      //_unityWidgetController.postMessage("GameObject", "LoadScene", "1");
+      //pageIndex = "1";
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SimpleScreen(pageIndex: "1")),
+      );
+    } else if (planetInfo.position == 2) {
+      print("22222222222222222222222222222222222222222222");
+      //pageIndex = "2";
+      //_unityWidgetController.postMessage("GameObject", "LoadScene", "2");
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SimpleScreen(pageIndex: "2")),
+      );
+    } else if (planetInfo.position == 3) {
+      print("33333333333333333333333333333333333333333333333");
+      //pageIndex = "3";
+      // _unityWidgetController.postMessage("GameObject", "LoadScene", "3");
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SimpleScreen(pageIndex: "3")),
+      );
+    }
   }
 }

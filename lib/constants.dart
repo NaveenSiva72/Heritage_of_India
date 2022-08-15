@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-Color primaryTextColor = Color(0xFF414C6B);
-Color secondaryTextColor = Color(0xFFE4979E);
+Color primaryTextColor = Color.fromARGB(255, 34, 132, 139);
+Color secondaryTextColor = Color.fromARGB(255, 240, 107, 149);
 Color titleTextColor = Colors.white;
 Color contentTextColor = Color(0xff868686);
-Color navigationColor = Color(0xFF6751B5);
-Color gradientStartColor = Color(0xFF0050AC);
-Color gradientEndColor = Color(0xFF9354B9);
+Color navigationColor = Color.fromARGB(255, 0, 0, 0);
+Color gradientStartColor = Color.fromARGB(255, 0, 0, 0);
+Color gradientEndColor = Color.fromARGB(255, 4, 0, 107);

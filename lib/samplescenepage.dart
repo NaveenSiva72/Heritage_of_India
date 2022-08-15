@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_unity_widget/flutter_unity_widget.dart';
 
 class SimpleScreen extends StatefulWidget {
-  SimpleScreen({Key key}) : super(key: key);
-
+  String pageIndex;
+  //SimpleScreen({Key key}) : super(key: key);
+  SimpleScreen({Key key, @required this.pageIndex}) : super(key: key);
   @override
   _SimpleScreenState createState() => _SimpleScreenState();
 }
@@ -18,20 +19,36 @@ class _SimpleScreenState extends State<SimpleScreen> {
   @override
   void initState() {
     super.initState();
+    //onUnityCreatedd(pageIndex);
   }
 
   @override
   void dispose() {
     _unityWidgetController.dispose();
     super.dispose();
+    // onUnityCreatedd(widget.pageIndex);
   }
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(Duration(seconds: 10), () {
+      onUnityCreatedd(widget.pageIndex);
+    });
+    print(widget.pageIndex);
+
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
         title: Text('Monuments 3D view'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () {
+              //onUnityCreatedd(widget.pageIndex);
+            },
+          ),
+          // add more IconButton
+        ],
       ),
       body: Card(
           margin: const EdgeInsets.all(0),
@@ -48,6 +65,7 @@ class _SimpleScreenState extends State<SimpleScreen> {
                 useAndroidViewSurface: true,
                 borderRadius: BorderRadius.all(Radius.circular(70)),
               ),
+
               /*PointerInterceptor(
                 child: Positioned(
                   bottom: 0,
@@ -89,6 +107,11 @@ class _SimpleScreenState extends State<SimpleScreen> {
       speed,
     );
   }*/
+  void onUnityCreatedd(String a) {
+    print("sroeuihgoiwheirhgpiwhepri");
+    print(a);
+    _unityWidgetController.postMessage("GameObject", "LoadScene", a);
+  }
 
   void onUnityMessage(message) {
     print('Received message from unity: ${message.toString()}');
