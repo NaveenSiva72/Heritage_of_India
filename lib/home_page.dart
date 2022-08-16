@@ -6,7 +6,6 @@ import 'artifacts_home_page.dart';
 import 'data.dart';
 import 'samplescenepage.dart';
 import 'package:flutter_unity_widget/flutter_unity_widget.dart';
-import 'package:flutter_universe/gate_way_of_India.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -219,8 +218,8 @@ class _HomePageState extends State<HomePage> {
                 // _unityWidgetController.postMessage(
                 //     "GameObject", "LoadScene", "0");
 
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => MyHomePage()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => SimpleScreen(pageIndex: "0")));
               },
             ),
             IconButton(

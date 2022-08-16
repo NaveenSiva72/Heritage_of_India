@@ -16,30 +16,66 @@ class _DetailPageState extends State<DetailPage> {
   GoogleTranslator translator = GoogleTranslator();
 
   List<String> items = [
+    "Select_a_language",
     "English",
     "Tamil",
     "Hindi",
     "Malayalam",
   ];
 
-  String selectedItem = "English";
+  String selectedItem = "Select_a_language";
   String text = "hello";
 
   @override
   Widget build(BuildContext context) {
+    //below string used in translator
     String cont = widget.planetInfo.description;
-    //String test2 = cont;
-    void trans() {
-      translator.translate(cont, to: "ta").then((value) {
-        //setState(() {
-        // cont = value.toString();
-        //print(cont);
-        //});
-        setState(() {
-          widget.planetInfo.description = value.toString();
-        });
-      });
-      //cont = "oombuda gotha";
+
+    //when a dropdown value changes it will load
+    void trans(lan) async {
+      switch (lan) {
+        case "English":
+          await translator
+              .translate(widget.planetInfo.description, to: "en")
+              .then((value) {
+            setState(() {
+              widget.planetInfo.description = value.toString();
+            });
+          });
+          break;
+        case "Tamil":
+          await translator
+              .translate(widget.planetInfo.description, to: "ta")
+              .then((value) {
+            setState(() {
+              widget.planetInfo.description = value.toString();
+            });
+          });
+          break;
+        case "Hindi":
+          await translator
+              .translate(widget.planetInfo.description, to: "hi")
+              .then((value) {
+            setState(() {
+              widget.planetInfo.description = value.toString();
+            });
+          });
+          break;
+        case "Malayalam":
+          await translator
+              .translate(widget.planetInfo.description, to: "ml")
+              .then((value) {
+            setState(() {
+              widget.planetInfo.description = value.toString();
+            });
+          });
+          break;
+      }
+      //translator.translate(cont, to: "ta").then((value) {
+      //  setState(() {
+      //   widget.planetInfo.description = value.toString();
+      // });
+      //});
     }
 
     return Scaffold(
@@ -115,7 +151,7 @@ class _DetailPageState extends State<DetailPage> {
                             onChanged: (String newValue) {
                               setState(() {
                                 selectedItem = newValue;
-                                trans();
+                                trans(selectedItem);
                               });
                             }),
                         //DropdownMenu ended.........
