@@ -2,7 +2,7 @@ class PlanetInfo {
   final int position;
   final String name;
   final String iconImage;
-  final String description;
+  String description;
   final List<String> images;
 
   PlanetInfo(

@@ -1,113 +1,107 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unity_widget/flutter_unity_widget.dart';
+import 'package:translator/translator.dart';
 
-class GateWayOfIndiaPlane extends StatefulWidget {
-  GateWayOfIndiaPlane({Key key}) : super(key: key);
-
+class MyHomePage extends StatefulWidget {
   @override
-  _GateWayOfIndiaPlaneState createState() => _GateWayOfIndiaPlaneState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _GateWayOfIndiaPlaneState extends State<GateWayOfIndiaPlane> {
-  static final GlobalKey<ScaffoldState> _scaffoldKey =
-      GlobalKey<ScaffoldState>();
+class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController textEditingController = TextEditingController();
+  GoogleTranslator translator = GoogleTranslator();
+  var output;
+  String dropdownValue;
 
-  UnityWidgetController _unityWidgetController;
-  double _sliderValue = 0.0;
+  static const Map<String, String> lang = {
+    "Hindi": "hi",
+    "English": "en",
+    "Urdu": "ur",
+  };
 
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _unityWidgetController.dispose();
-    super.dispose();
+  void trans() {
+    translator
+        .translate(textEditingController.text, to: "$dropdownValue")
+        .then((value) {
+      setState(() {
+        output = value;
+      });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
-      appBar: AppBar(
-        title: Text('Hello'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.settings),
-            onPressed: () {
-              onUnityCreatedd("3");
-            },
-          ),
-          // add more IconButton
-        ],
-      ),
-      body: Card(
-          margin: const EdgeInsets.all(0),
-          clipBehavior: Clip.antiAlias,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0),
-          ),
-          child: Stack(
-            children: [
-              UnityWidget(
-                onUnityCreated: _onUnityCreated,
-                onUnityMessage: onUnityMessage,
-                onUnitySceneLoaded: onUnitySceneLoaded,
-                useAndroidViewSurface: true,
-                borderRadius: BorderRadius.all(Radius.circular(70)),
+        appBar: AppBar(
+          title: Text("Multi Language Translator"),
+        ),
+        body: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(left: 20, right: 20),
+              child: TextFormField(
+                style: TextStyle(fontSize: 24),
+                controller: textEditingController,
+                onTap: () {
+                  trans();
+                },
+                decoration: InputDecoration(
+                    labelText: 'Type Here',
+                    labelStyle: TextStyle(fontSize: 15)),
               ),
-              /*PointerInterceptor(
-                child: Positioned(
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  child: Card(
-                    elevation: 10,
-                    child: Column(
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20),
-                          child: Text("Rotation speed:"),
-                        ),
-                        Slider(
-                          onChanged: (value) {
-                            setState(() {
-                              _sliderValue = value;
-                            });
-                            setRotationSpeed(value.toString());
-                          },
-                          value: _sliderValue,
-                          min: 0.0,
-                          max: 1.0,
-                        ),
-                      ],
-                    ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text("Select Language here =>"),
+                DropdownButton<String>(
+                  value: dropdownValue,
+                  icon: Icon(Icons.arrow_downward),
+                  iconSize: 24,
+                  elevation: 16,
+                  style: TextStyle(color: Colors.deepPurple),
+                  underline: Container(
+                    height: 2,
+                    color: Colors.deepPurpleAccent,
                   ),
+                  onChanged: (String newValue) {
+                    setState(() {
+                      dropdownValue = newValue;
+                      trans();
+                    });
+                  },
+                  items: lang
+                      .map((string, value) {
+                        return MapEntry(
+                          string,
+                          DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(string),
+                          ),
+                        );
+                      })
+                      .values
+                      .toList(),
                 ),
-              ),*/
-            ],
-          )),
-    );
-  }
-
-  void onUnityCreatedd(String a) {
-    print("sroeuihgoiwheirhgpiwhepri");
-    _unityWidgetController.postMessage("GameObject", "LoadScene", a);
-  }
-
-  void onUnityMessage(message) {
-    print('Received message from unity: ${message.toString()}');
-  }
-
-  void onUnitySceneLoaded(SceneLoaded scene) {
-    print('Received scene loaded from unity: ${scene.name}');
-    print('Received scene loaded from unity buildIndex: ${scene.buildIndex}');
-  }
-
-  // Callback that connects the created controller to the unity controller
-  void _onUnityCreated(controller) {
-    controller.resume();
-    this._unityWidgetController = controller;
+              ],
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Text('Translated Text'),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              output == null ? "Please Select Language" : output.toString(),
+              style: TextStyle(
+                  fontSize: 17,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.w500),
+            ),
+          ],
+        ));
   }
 }
