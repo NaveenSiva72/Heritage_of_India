@@ -31,7 +31,7 @@ class _SimpleScreenState extends State<SimpleScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration(seconds: 10), () {
+    Future.delayed(Duration(seconds: 2), () {
       onUnityCreatedd(widget.pageIndex);
     });
     print(widget.pageIndex);

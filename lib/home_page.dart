@@ -6,6 +6,7 @@ import 'artifacts_home_page.dart';
 import 'data.dart';
 import 'samplescenepage.dart';
 import 'package:flutter_unity_widget/flutter_unity_widget.dart';
+import 'package:flutter_universe/main_animated_markers_map.dart.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -224,7 +225,10 @@ class _HomePageState extends State<HomePage> {
             ),
             IconButton(
               icon: Image.asset('assets/profile_icon.png'),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => MainAnimatedMarkersMap()));
+              },
             ),
           ],
         ),

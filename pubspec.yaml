@@ -31,6 +31,7 @@ dependencies:
   cupertino_icons: ^0.1.3
   translator:
   flutter_unity_widget: ^2022.1.7+1
+  flutter_map: 
 
 dev_dependencies:
   flutter_test:

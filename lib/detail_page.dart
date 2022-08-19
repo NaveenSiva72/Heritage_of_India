@@ -25,50 +25,68 @@ class _DetailPageState extends State<DetailPage> {
 
   String selectedItem = "Select_a_language";
   String text = "hello";
-
+  bool ans = false;
+  String cont = "";
+  String ErrorText = "";
   @override
   Widget build(BuildContext context) {
+    //ans = false;
+
     //below string used in translator
-    String cont = widget.planetInfo.description;
+    if (selectedItem == "Select_a_language") {
+      ErrorText = "select a language";
+    } else {}
 
     //when a dropdown value changes it will load
     void trans(lan) async {
       switch (lan) {
+        case "Select_a_language":
+          cont = "";
+          ErrorText = "select a language";
+          break;
         case "English":
+          ans = true;
+          print(cont);
           await translator
               .translate(widget.planetInfo.description, to: "en")
               .then((value) {
             setState(() {
-              widget.planetInfo.description = value.toString();
+              cont = value.toString();
             });
           });
+          ErrorText = "";
           break;
         case "Tamil":
+          ans = true;
           await translator
               .translate(widget.planetInfo.description, to: "ta")
               .then((value) {
             setState(() {
-              widget.planetInfo.description = value.toString();
+              cont = value.toString();
             });
           });
+          ErrorText = "";
           break;
         case "Hindi":
+          ans = true;
           await translator
               .translate(widget.planetInfo.description, to: "hi")
               .then((value) {
             setState(() {
-              widget.planetInfo.description = value.toString();
+              cont = value.toString();
             });
           });
+          ErrorText = "";
           break;
         case "Malayalam":
           await translator
               .translate(widget.planetInfo.description, to: "ml")
               .then((value) {
             setState(() {
-              widget.planetInfo.description = value.toString();
+              cont = value.toString();
             });
           });
+          ErrorText = "";
           break;
       }
       //translator.translate(cont, to: "ta").then((value) {
@@ -155,18 +173,22 @@ class _DetailPageState extends State<DetailPage> {
                               });
                             }),
                         //DropdownMenu ended.........
+                        Text(
+                          ErrorText,
+                          style: TextStyle(color: Colors.redAccent),
+                        ),
                         Divider(color: Colors.black38),
                         SizedBox(height: 32),
                         Text(
-                          widget.planetInfo.description,
-                          /*maxLines: 590,
+                          cont ?? '',
+                          maxLines: 590,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 20,
                             color: contentTextColor,
                             fontWeight: FontWeight.w500,
-                          ),*/
+                          ),
                         ),
                         SizedBox(height: 32),
                         Divider(color: Colors.black38),
@@ -226,32 +248,6 @@ class _DetailPageState extends State<DetailPage> {
         ),
       ),
     );
-  }
-
-  onSelected(BuildContext context, selectedItem, cont) {
-    final translator = GoogleTranslator();
-
-    switch (selectedItem) {
-      case "English":
-        var hello = translator.translate(cont, to: 'en');
-        print(hello);
-        break;
-      case "Tamil":
-        var hello = translator.translate(cont, to: 'ta');
-        print(hello);
-
-        break;
-      case "Hindi":
-        var hello = translator.translate(cont, to: 'hi');
-        print(hello);
-
-        break;
-      case "Malayalam":
-        var hello = translator.translate(cont, to: 'ma');
-        print(hello);
-
-        break;
-    }
   }
 
   void PlainSUrfacePgaeRouter(BuildContext context) {
