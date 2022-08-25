@@ -168,7 +168,7 @@ class _artifactHomePageState extends State<artifactHomePage> {
                             right: 20,
                             bottom: 30,
                             child: Text(
-                              planets[index].position.toString(),
+                              planets[index].artindex.toString(),
                               style: TextStyle(
                                 fontFamily: 'Montserrat',
                                 fontSize: 200,

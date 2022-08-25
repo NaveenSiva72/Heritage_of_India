@@ -5,34 +5,33 @@ import 'samplescenepage.dart';
 import 'package:translator/translator.dart';
 
 class DetailPage extends StatefulWidget {
-  final PlanetInfo planetInfo;
-  DetailPage({Key key, @required this.planetInfo}) : super(key: key);
+  final MonumentsInfo monumentsInfo;
+  DetailPage({Key key, @required this.monumentsInfo}) : super(key: key);
 
   @override
   State<DetailPage> createState() => _DetailPageState();
 }
 
+const Alignment centerLeft = Alignment(-1.0, 0.0);
+
 class _DetailPageState extends State<DetailPage> {
   GoogleTranslator translator = GoogleTranslator();
 
   List<String> items = [
-    "Select_a_language",
     "English",
     "Tamil",
     "Hindi",
     "Malayalam",
   ];
 
-  String selectedItem = "Select_a_language";
-  String text = "hello";
-  bool ans = false;
+  String selectedItem = "English";
   String cont = "";
   String ErrorText = "";
   @override
   Widget build(BuildContext context) {
     //ans = false;
 
-    //below string used in translator
+    //below string used in
     if (selectedItem == "Select_a_language") {
       ErrorText = "select a language";
     } else {}
@@ -45,10 +44,9 @@ class _DetailPageState extends State<DetailPage> {
           ErrorText = "select a language";
           break;
         case "English":
-          ans = true;
           print(cont);
           await translator
-              .translate(widget.planetInfo.description, to: "en")
+              .translate(widget.monumentsInfo.description, to: "en")
               .then((value) {
             setState(() {
               cont = value.toString();
@@ -57,9 +55,8 @@ class _DetailPageState extends State<DetailPage> {
           ErrorText = "";
           break;
         case "Tamil":
-          ans = true;
           await translator
-              .translate(widget.planetInfo.description, to: "ta")
+              .translate(widget.monumentsInfo.description, to: "ta")
               .then((value) {
             setState(() {
               cont = value.toString();
@@ -68,9 +65,8 @@ class _DetailPageState extends State<DetailPage> {
           ErrorText = "";
           break;
         case "Hindi":
-          ans = true;
           await translator
-              .translate(widget.planetInfo.description, to: "hi")
+              .translate(widget.monumentsInfo.description, to: "hi")
               .then((value) {
             setState(() {
               cont = value.toString();
@@ -80,7 +76,7 @@ class _DetailPageState extends State<DetailPage> {
           break;
         case "Malayalam":
           await translator
-              .translate(widget.planetInfo.description, to: "ml")
+              .translate(widget.monumentsInfo.description, to: "ml")
               .then((value) {
             setState(() {
               cont = value.toString();
@@ -91,10 +87,14 @@ class _DetailPageState extends State<DetailPage> {
       }
       //translator.translate(cont, to: "ta").then((value) {
       //  setState(() {
-      //   widget.planetInfo.description = value.toString();
+      //   widget.monumentsInfo.description = value.toString();
       // });
       //});
     }
+
+    Future.delayed(Duration(microseconds: 1), () {
+      trans(selectedItem);
+    });
 
     return Scaffold(
       body: SafeArea(
@@ -109,7 +109,7 @@ class _DetailPageState extends State<DetailPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        widget.planetInfo.position.toString(),
+                        widget.monumentsInfo.position.toString(),
                         style: TextStyle(
                           fontFamily: 'Avenir',
                           fontSize: 247,
@@ -121,7 +121,7 @@ class _DetailPageState extends State<DetailPage> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Image.asset(widget.planetInfo.iconImage,
+                          Image.asset(widget.monumentsInfo.iconImage,
                               width: 230), //expected
                         ],
                       ),
@@ -134,7 +134,7 @@ class _DetailPageState extends State<DetailPage> {
                       children: <Widget>[
                         SizedBox(height: 20),
                         Text(
-                          widget.planetInfo.name,
+                          widget.monumentsInfo.name,
                           style: TextStyle(
                             fontFamily: 'Avenir',
                             fontSize: 56,
@@ -183,11 +183,14 @@ class _DetailPageState extends State<DetailPage> {
                           cont ?? '',
                           maxLines: 590,
                           overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.justify,
                           style: TextStyle(
-                            fontFamily: 'Avenir',
-                            fontSize: 20,
+                            fontFamily: 'Monserat',
+                            fontSize: 16,
                             color: contentTextColor,
                             fontWeight: FontWeight.w500,
+                            height: 1.5,
+                            letterSpacing: 0.1,
                           ),
                         ),
                         SizedBox(height: 32),
@@ -212,7 +215,7 @@ class _DetailPageState extends State<DetailPage> {
                     height: 100,
                     padding: const EdgeInsets.only(left: 32.0),
                     child: ListView.builder(
-                        itemCount: widget.planetInfo.images.length,
+                        itemCount: widget.monumentsInfo.images.length,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
                           return Card(
@@ -223,7 +226,7 @@ class _DetailPageState extends State<DetailPage> {
                             child: AspectRatio(
                                 aspectRatio: 1,
                                 child: Image.asset(
-                                  widget.planetInfo.images[index],
+                                  widget.monumentsInfo.images[index],
                                   fit: BoxFit.cover,
                                 )),
                           );
@@ -253,7 +256,7 @@ class _DetailPageState extends State<DetailPage> {
   void PlainSUrfacePgaeRouter(BuildContext context) {
     // UnityWidgetController _unityWidgetController;
 
-    if (widget.planetInfo.position == 1) {
+    if (widget.monumentsInfo.position == 1) {
       print("111111111111111111111111111111111111111");
       //_unityWidgetController.postMessage("GameObject", "LoadScene", "1");
       //pageIndex = "1";
@@ -261,7 +264,7 @@ class _DetailPageState extends State<DetailPage> {
         context,
         MaterialPageRoute(builder: (context) => SimpleScreen(pageIndex: "1")),
       );
-    } else if (widget.planetInfo.position == 2) {
+    } else if (widget.monumentsInfo.position == 2) {
       print("22222222222222222222222222222222222222222222");
       //pageIndex = "2";
       //_unityWidgetController.postMessage("GameObject", "LoadScene", "2");
@@ -270,7 +273,7 @@ class _DetailPageState extends State<DetailPage> {
         context,
         MaterialPageRoute(builder: (context) => SimpleScreen(pageIndex: "2")),
       );
-    } else if (widget.planetInfo.position == 3) {
+    } else if (widget.monumentsInfo.position == 3) {
       print("33333333333333333333333333333333333333333333333");
       //pageIndex = "3";
       // _unityWidgetController.postMessage("GameObject", "LoadScene", "3");
@@ -278,6 +281,60 @@ class _DetailPageState extends State<DetailPage> {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => SimpleScreen(pageIndex: "3")),
+      );
+    } else if (widget.monumentsInfo.position == 4) {
+      print("444444444444444444444444444444444444444444");
+      //pageIndex = "3";
+      // _unityWidgetController.postMessage("GameObject", "LoadScene", "3");
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SimpleScreen(pageIndex: "4")),
+      );
+    } else if (widget.monumentsInfo.position == 5) {
+      print("5555555555555555555555555555555555");
+      //pageIndex = "3";
+      // _unityWidgetController.postMessage("GameObject", "LoadScene", "3");
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SimpleScreen(pageIndex: "5")),
+      );
+    } else if (widget.monumentsInfo.position == 6) {
+      print("6666666666666666666666666666666666666");
+      //pageIndex = "3";
+      // _unityWidgetController.postMessage("GameObject", "LoadScene", "3");
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SimpleScreen(pageIndex: "6")),
+      );
+    } else if (widget.monumentsInfo.position == 7) {
+      print("777777777777777777777777777777777777777777777");
+      //pageIndex = "3";
+      // _unityWidgetController.postMessage("GameObject", "LoadScene", "3");
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SimpleScreen(pageIndex: "7")),
+      );
+    } else if (widget.monumentsInfo.position == 8) {
+      print("8888888888888888888888888888888888888888888");
+      //pageIndex = "3";
+      // _unityWidgetController.postMessage("GameObject", "LoadScene", "3");
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SimpleScreen(pageIndex: "8")),
+      );
+    } else if (widget.monumentsInfo.position == 9) {
+      print("99999999999999999999999999999999999999999999999999");
+      //pageIndex = "3";
+      // _unityWidgetController.postMessage("GameObject", "LoadScene", "3");
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SimpleScreen(pageIndex: "9")),
       );
     }
   }

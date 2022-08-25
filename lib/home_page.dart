@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_universe/detail_page.dart';
-import 'color.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:flutter_universe/suppa.dart';
 import 'artifacts_home_page.dart';
+import 'color.dart';
 import 'data.dart';
 import 'samplescenepage.dart';
 import 'package:flutter_unity_widget/flutter_unity_widget.dart';
@@ -14,16 +15,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // final Shader linearGradient = LinearGradient(
-  // colors: <Color>[
-  // Color.fromARGB(255, 203, 0, 244),
-  // Color.fromARGB(255, 203, 0, 244),
-  // Color.fromARGB(255, 139, 0, 104),
-  // Color.fromARGB(255, 0, 157, 255),
-  //],
-  //).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
-  List<String> items = ["Monuments", "Artefacts"];
-  String selectedItem = "Monuments";
+  List<String> items = ["Chapter-1", "Chapter-2"];
+  String selectedItem = "Chapter-1";
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                           context,
                           PageRouteBuilder(
                             pageBuilder: (context, a, b) => DetailPage(
-                              planetInfo: planets[index],
+                              monumentsInfo: planets[index],
                             ),
                           ),
                         );
@@ -134,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                                         textAlign: TextAlign.left,
                                       ),
                                       Text(
-                                        'Monuments',
+                                        'Chapter-1',
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
                                           fontSize: 17,
@@ -209,25 +202,22 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             IconButton(
-              icon: Image.asset('assets/menu_icon.png'),
+              icon: Icon(Icons.home),
               onPressed: () {},
             ),
             IconButton(
-              icon: Image.asset('assets/search_icon.png'),
+              icon: Icon(Icons.view_in_ar),
               onPressed: () {
-                //UnityWidgetController _unityWidgetController;
-                // _unityWidgetController.postMessage(
-                //     "GameObject", "LoadScene", "0");
-
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => SimpleScreen(pageIndex: "0")));
               },
             ),
             IconButton(
-              icon: Image.asset('assets/profile_icon.png'),
+              icon: Icon(Icons.home),
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => MainAnimatedMarkersMap()));
+                    //builder: (context) => MainAnimatedMarkersMap()));
+                    builder: (context) => suppaExample()));
               },
             ),
           ],
@@ -238,7 +228,7 @@ class _HomePageState extends State<HomePage> {
 
   onSelected(BuildContext context, selectedItem) {
     switch (selectedItem) {
-      case "Artefacts":
+      case "Chapter-2":
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (context) => artifactHomePage()));
 

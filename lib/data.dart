@@ -1,11 +1,11 @@
-class PlanetInfo {
+class MonumentsInfo {
   final int position;
   final String name;
   final String iconImage;
   String description;
   final List<String> images;
 
-  PlanetInfo(
+  MonumentsInfo(
     this.position, {
     this.name,
     this.iconImage,
@@ -14,68 +14,15 @@ class PlanetInfo {
   });
 }
 
-List<PlanetInfo> planets = [
-  PlanetInfo(1,
-      name: 'Charminar',
-      iconImage: 'assets/Charminar.png',
-      description:
-          '''Charminar is one of the greatest monuments situated in India that has immense significance. It was constructed in the year 1591 and has been standing tall since then as the popular icon of Hyderabad. It also has a mosque in its architecture representing the Indo-Islamic conglomeration of art and culture. It is the prime tourist attraction in the city that draws a lot of visitors throughout the year. Big festivals like Ramzan are celebrated here in accordance with the government. People from different cultures visit the local markets to witness the beauty of this historic monument during the festive time.
-
-
-In 1591, Sultan Muhammad Quli Qutub Shah, the ruler of the Qutub Shahi Dynasty, got this monument constructed after he visited this city from Golconda. The prime reason for adding four minarets in the design is to represent four directions. It was also a memoir of his beloved wife, Queen Bhagwati. He saw her for the first time at this location and fell in love. He was also a poet. He prayed using his verses to God for the safety and wellbeing of this monument.
-
-
-In this Charminar essay, you will find that it is 48.7 meters high. The four towers face one another and hold a long-drawn balcony. This monument is made of limestone, pulverized marbles, and granite. It is estimated that the total weight of this monument is 14,000 tons.
-
-
-Charminar has a secret tunnel that connects with Golconda Fort. It was built as a safety tunnel and as an escape route for the Sultan and others visiting the fort. Wazu Khana, a place inside the monument, was built where people used to wash their faces and hands before praying. Once it had a fountain in the middle.
-
-
-Many historians believe that this monument was built to commemorate the end of a deadly plague back then. Some other versions also depict it as is the ‘Arc De Triumph of the East’. The monument is built in the form of a square and has four clocks in every direction. The four minarets represent the four Khalifas of Islam as per some historians. The praying section of the mosque is on the top of this monument. Back then, a madrasa or a school was run on the first floor. The minarets were built to keep an eye on the entire city back then. The city was then constructed surrounding this monument. Since then, the city has flourished. It is the central point of the city. The tourists can see roads coming out of this location and entering the city like a network.
-
-
-A huge local market can be seen surrounding Charminar. This market is known for its bangles. Laad Bazaar is famous for its local jewelry items. Patther Gatti is a well-known market for pearls. Sarojini Naidu, the Nightingale of India, was born and brought up in this city. She painted an excellent picture of these local markets with her words in the poem ‘In the Bazaars of Hyderabad.
-
-
-Charminar is an important construction in the diversified history of India. It is the point that earmarks the sultanate rule in the southern part of India. This beautiful construction and architectural elegance draw many tourists from different parts of the world every year.''',
-      images: [
-        'assets/CharminarInside1.jpg',
-      ]),
-  PlanetInfo(2,
+List<MonumentsInfo> planets = [
+  MonumentsInfo(1,
       name: 'Konark',
       iconImage: 'assets/Konark.png',
       description:
-          '''The Sun Temple at Konârak, located on the eastern shores of the Indian subcontinent, is one of the outstanding examples of temple architecture and art as revealed in its conception, scale and proportion, and in the sublime narrative strength of its sculptural embellishment. It is an outstanding testimony to the 13th-century kingdom of Orissa and a monumental example of the personification of divinity, thus forming an invaluable link in the history of the diffusion of the cult of Surya,the Sun God. In this sense, it is directly and materially linked to Brahmanism and tantricbelief systems. The Sun Temple is the culmination of Kalingan temple architecture, with all its defining elements in complete and perfect form. A masterpiece of creative genius in both conception and realisation, the temple represents a chariot of the Sun God, with twelve pairs of wheels drawn by seven horses evoking its movement across the heavens. It is embellished with sophisticated and refined iconographical depictions of contemporary life and activities. On the north and south sides are 24 carved wheels, each about 3 m in diameter, as well as symbolic motifs referring to the cycle of the seasons and the months. These complete the illusionary structure of the temple-chariot. Between the wheels, the plinth of the temple is entirely decorated with reliefs of fantastic lions, musicians and dancers, and erotic groups. Like many Indian temples, the Sun Temple comprises several distinct and well-organized spatial units. The vimana (principal sanctuary) was surmounted by a high tower with a shikhara (crowning cap), which was razed in the 19th century. To the east, the jahamogana (audience hall) dominates the ruins with its pyramidal mass. Farther to the east, the natmandir (dance hall), today unroofed, rises on a high platform. Various subsidiary structures are still to be found within the enclosed area of the rectangular wall, which is punctuated by gates and towers.The Sun Temple is an exceptional testimony, in physical form, to the 13th-century Hindu Kingdom of Orissa, under the reign of Narasimha Deva I (AD 1238-1264). Its scale, refinement and conception represent the strength and stability of the Ganga Empire as well as the value systems of the historic milieu. Its aesthetical and visually overwhelming sculptural narratives are today an invaluable window into the religious, political, social and secular life of the people of that period. The Sun Templeis directly associated with the idea and belief of the personification of the Sun God, which is adumbrated in the Vedas and classical texts. The Sun is personified as a divine being with a history, ancestry, family, wives and progeny, and as such, plays a very prominent role in the myths and legends of creation. Furthermore, it is associated with all the legends of its own artistic creation – the most evocative being its construction over twelve years using 1,200 artisans – and the stories about the deep commitment of its master builder, Bisu Moharana, to the project, in which his son (who was born during this period) later became involved. Konârak’s location and name are important testimonies to all the above associations, and its architectural realisation is associated with the living traditions of Brahmanismand tantricpractices.
+          '''           The Sun Temple at Konârak, located on the eastern shores of the Indian subcontinent, is one of the outstanding examples of temple architecture and art as revealed in its conception, scale and proportion, and in the sublime narrative strength of its sculptural embellishment. It is an outstanding testimony to the 13th-century kingdom of Orissa and a monumental example of the personification of divinity, thus forming an invaluable link in the history of the diffusion of the cult of Surya,the Sun God. In this sense, it is directly and materially linked to Brahmanism and tantricbelief systems. The Sun Temple is the culmination of Kalingan temple architecture, with all its defining elements in complete and perfect form. A masterpiece of creative genius in both conception and realisation, the temple represents a chariot of the Sun God, with twelve pairs of wheels drawn by seven horses evoking its movement across the heavens. It is embellished with sophisticated and refined iconographical depictions of contemporary life and activities. On the north and south sides are 24 carved wheels, each about 3 m in diameter, as well as symbolic motifs referring to the cycle of the seasons and the months. These complete the illusionary structure of the temple-chariot. Between the wheels, the plinth of the temple is entirely decorated with reliefs of fantastic lions, musicians and dancers, and erotic groups. Like many Indian temples, the Sun Temple comprises several distinct and well-organized spatial units. The vimana (principal sanctuary) was surmounted by a high tower with a shikhara (crowning cap), which was razed in the 19th century. To the east, the jahamogana (audience hall) dominates the ruins with its pyramidal mass. Farther to the east, the natmandir (dance hall), today unroofed, rises on a high platform. Various subsidiary structures are still to be found within the enclosed area of the rectangular wall, which is punctuated by gates and towers.The Sun Temple is an exceptional testimony, in physical form, to the 13th-century Hindu Kingdom of Orissa, under the reign of Narasimha Deva I (AD 1238-1264). Its scale, refinement and conception represent the strength and stability of the Ganga Empire as well as the value systems of the historic milieu. Its aesthetical and visually overwhelming sculptural narratives are today an invaluable window into the religious, political, social and secular life of the people of that period. The Sun Templeis directly associated with the idea and belief of the personification of the Sun God, which is adumbrated in the Vedas and classical texts. The Sun is personified as a divine being with a history, ancestry, family, wives and progeny, and as such, plays a very prominent role in the myths and legends of creation. Furthermore, it is associated with all the legends of its own artistic creation – the most evocative being its construction over twelve years using 1,200 artisans – and the stories about the deep commitment of its master builder, Bisu Moharana, to the project, in which his son (who was born during this period) later became involved. Konârak’s location and name are important testimonies to all the above associations, and its architectural realisation is associated with the living traditions of Brahmanismand tantricpractices.
 ''',
       images: []),
-  PlanetInfo(3,
-      name: 'GateWay',
-      iconImage: 'assets/GateWay.png',
-      description:
-          '''The Gateway of India is an arch-monument built in the early 20th century in the city of Mumbai, India. It was erected to commemorate the landing of King-Emperor George V, the first British monarch to visit India, in December 1911 at Ramchandani Road near Shyamaprasad Mukherjee Chowk.
-
-The foundation stone was laid in March 1913 for a monument built in the Indo-Islamic style, inspiring by elements of 16th-century Gujarati architecture. The final design of the monument by architect George Wittet was sanctioned only in 1914, and construction was completed in 1924. The structure is a memorial arch made of basalt, which is 26 metres (85 feet) high, with an architectural resemblance to a triumphial arch as well as Gujarati architecture of the time.
-
-After its construction the Gateway was used as a symbolic ceremonial entrance to India for important colonial personnel. The Gateway is also the monument from where the last British troops left India in 1948, following Indian independence. It is located on the waterfront at an angle, opposite the Taj Mahal Palace and Tower Hotel and overlooks the Arabian Sea. Today, the monument is synonymous with the city of Mumbai, and is amongst its prime tourist attractions. The gateway is also a gathering spot for locals, street vendors, and photographers soliciting services. It holds significance for the local Jewish community as it has been the spot for Hanukkah celebrations, with the lighting of the menorah, since 2003. There are five jetties located at the Gateway, of which two are used for commercial ferry operations.
-
-The Gateway was the site of a terror attack in August 2003, when there was a bomb blast in a taxi parked in front of it. Access to the gateway was restricted after people congregated at its premises following the 2008 Mumbai terror attacks, in which the Taj Hotel opposite the gateway and other locations in its vicinity were targeted.
-
-In March 2019, the Maharashtra state government proposed a four-step plan to develop the location for the convenience of tourists, following a direction issued by the state governor in February 2019.
-
-''',
-      images: []),
-  PlanetInfo(4,
-      name: 'Uthirakosamangai Temple',
-      iconImage: 'assets/Uthira2.png',
-      description:
-          '''Uthirakosamangai, also known as Mangalanatha Swamy temple, is a Shaiva temple situated near Ramanathapuram in the Ramanathapuram district of Tamil Nadu. The temple is much older and the structure as it exists today is believed to be built by the Pandya kings, Achutappa Nayak (1529–1542 CE), Muthuveerappar and other kings of Ramanthapuram at various times. The temple has been glorified by the hymns of 9th-century saint Manickavasagar and 15th-century saint Arunagirinathar. 
-The temple is considered sacred along the lines of Ramanathapuram, Sethu Madhava Theertham and Lakshmana Theertham. The temple is a prominent tourist destination of Ramanathapuram district. 
-The temple has numerous shrines, with those of Mangalanathar, Mangalambigai and Natarajar being the most prominent. The temple houses a 6 ft (1.8 m) tall ancient maragatha Nataraja idol carved out of emerald, being the one of its kind. The temple has six daily rituals at various times from 5:30 a.m. to 8 p.m., and six yearly festivals on its calendar. The temple is maintained and administered by the Hindu Religious and Endowment Board of the Government of Tamil Nadu.
-
-As per Hindu legend, once hundreds of rishis (ascetics) performed penance worshipping Shiva. Shiva told the rishis that he would appear in the form of a fireball to acknowledge the penance of Mandothari, the wife of king Ravana in Sri Lanka. Shiva appeared in the form a small child in Ravana's palace. Ravana lifted the beautiful child and there was a small wound out of it. Simultaneously, there was a fireball out of the Agni Theertham (temple tank), which the rishis felt were on account of Shiva attacking Ravana. Out of thousand, 999 killed themselves by falling in the fire, while one of them remained to save the vedic books. Shiva was pleased by the rishi and appeared as Sahasralingam (thousand lingams) for the 999 and one more for himself in the temple. The single rishi was believed to have emerged later as Manickavasgar in his later birth. 
-''',
-      images: []),
-  PlanetInfo(5,
+  MonumentsInfo(2,
       name: 'TajMahal',
       iconImage: 'assets/TajMahal.png',
       description:
@@ -93,27 +40,7 @@ The Taj Mahal is a perfect symmetrical planned building, with an emphasis of bil
 
 Criterion (i): Taj Mahal represents the finest architectural and artistic achievement through perfect harmony and excellent craftsmanship in a whole range of Indo-Islamic sepulchral architecture. It is a masterpiece of architectural style in conception, treatment and execution and has unique aesthetic qualities in balance, symmetry and harmonious blending of various elements.''',
       images: []),
-  PlanetInfo(6,
-      name: 'Pattadakal',
-      iconImage: 'assets/Pattadakal.png',
-      description:
-          '''Pattadakal ("place of coronation") was considered a holy place, being where the Malaprabha river turned northwards towards the Himalayas and the Kailasha mountain (uttara-vahini). As its name implies, it was used during the Chalukya dynasty for coronation ceremonies, such as that of Vinayaditya in the 7th century CE.[3][4] Other names this place was known by were Kisuvolal meaning "valley of red soil", Raktapura meaning "city of red", and Pattada-Kisuvolal meaning "red soil valley for coronation".[3][15][16] The site, states Archaeological Survey of India, is mentioned in texts by Srivijaya and is referred to by Ptolemy as "Petirgal" in his Geography.[3]
-
-The early rulers of the Chalukya during the 5th - 6th century were Vaishnavites (a community that believes and offers prayers to Lord Vishnu, followers of Vaishnavism) and then converted themselves into Shivaites (a community that believes and offer prayers to Lord Shiva and followers of Shivaism). Hence the temples in and around this compound are dedicated to Lord Shiva.
-
-Pattadakal became, along with nearby Aihole and Badami, a major cultural centre and religious site for innovations in architecture and experimentation of ideas.[3] The rule of the Gupta Empire during the 5th century brought about a period of political stability, during which Aihole became a locus of scholarship. The experimentations in architecture extended into Badami over the course of the next two centuries. This culture of learning encompassed Pattadakal in the 7th century which became a nexus where ideas from northern and southern India fused.[3][17] It was during this latter period that the Chalukya empire constructed many of the temples in Aihole-Badami-Pattadakal region.[1][18]
-
-After the fall of the Chalukya Empire, the region was annexed by the Rashtrakuta kingdom, who would rule over the region into the 10th century. In the 11th century, and into the 12th century, the region came under the rule of the Late Chalukyas (Western Chalukya Empire, Chalukyas of Kalyani), an offshoot of the Early Chalukya Empire.[19][20] Although the area was not a capital region, nor in proximity to one, numerous sources such as inscriptions, contemporaneous texts and the architectural style indicate that, from the 9th to 12th centuries, new Hindu, Jain and Buddhist temples and monasteries continued to be built in the Pattadakal region. Historian George Michell attributes this to the presence of a substantial population and its burgeoning wealth.[19]
-
-Throughout the 13th century, Pattadakal, the Malaprabha valley, as well as much of the nearby Deccan region, was subject to raids and plunder by the Delhi Sultanate armies that devastated the region.[19][21] This period ended with the rise of the Vijayanagara Empire. It was responsible for the construction of forts for the protection of the monuments, as evidenced by inscriptions in the fort at Badami. Pattadakal was a part of the border region that witnessed wars between Vijayanagara and the Sultanates to its north. Following the collapse of Vijayanagara Empire in 1565, Pattadakal was annexed by the Sultanate of Bijapur, which was ruled by the Adil Shahi dynasty.[19] In the late 17th century, the Mughal Empire, under Aurangzeb, gained control of Pattadakal from the Sultanate. After the collapse of the Mughal Empire, Pattadakal came under the control of the Maratha Empire. It later changed hands, yet again, when Haider Ali and Tipu Sultan wrested control of it in late 18th century but would lose it when the British defeated Tipu Sultan and annexed the region.[19]
-
-The monuments at Pattadakal are evidence of the existence, and the history, of interaction between the early northern and southern styles of Hindu arts.[22] According to T. Richard Blurton, the history of temple arts in northern India is unclear as the region was repeatedly sacked by invaders from Central Asia, particularly during the Muslim incursions from the 11th century onward. The subsequent "warfare has greatly reduced the quantity of surviving examples". The Pattadakal monuments completed in 7th and 8th century are among the earliest surviving examples of these early religious arts and ideas.[22][23]
-
-Prehistoric Monuments
-
-Based on some recent findings by Archelogist and pre-historian Prof. Ravi Korisettar published works for National Institutes of Advance studies, India, the Early Chalukyan artisans were not the first to build monuments in the Malaprabha Valley. At Bachinnagudda, just a couple of kilometres west of Pattadakallu, along the road leading to Badami, is a rough-looking monument believed to date back to the Iron Age (approximately 1200 BCE – 500 BCE). This monument, called a dolmen, belongs to a class of structures called megaliths, which were erected all over southern India mostly during the Iron Age and the succeeding Early Historic period.[24][25]''',
-      images: []),
-  PlanetInfo(7,
+  MonumentsInfo(3,
       name: 'Red Fort',
       iconImage: 'assets/RedFort.png',
       description:
@@ -133,7 +60,6 @@ In 1788, a Maratha garrison occupied the Red fort and Delhi alongside providing 
 
 During the Second Anglo-Maratha War, forces of the East India Company defeated Maratha forces of Daulat Rao Scindia in the Battle of Delhi; this ended Maratha control over the city and their control of the Red Fort.[28] After the battle, the British East India Company took over the administration of Mughal territories and installed a Resident at the Red Fort.[11]: 11  The last Mughal emperor to occupy the fort, Bahadur Shah II, became a symbol of the 1857 rebellion against the British East India Company in which the residents of Shahjahanabad participated.[11]: 15 
 
-
 The Rang Mahal inside Red Fort in the mid-nineteenth century.
 
 The Rang Mahal inside Red Fort today.
@@ -141,10 +67,8 @@ Despite its position as the seat of Mughal power and its defensive capabilities,
 
 Lord Curzon, Viceroy of India from 1899 to 1905, ordered repairs to the fort including reconstruction of the walls and the restoration of the gardens complete with a watering system.[32]
 
-
 Every year on India's Independence Day, the Prime Minister hoists the Indian "tricolour flag" at the fort's main gate and delivers a nationally broadcast speech from its ramparts. Pictured is Nehru on 15 August 1947.
 Most of the jewels and artwork located in the Red Fort were looted during Nadir Shah's invasion of 1747 and again after the Indian Rebellion of 1857 against the British. They were eventually sold to private collectors or the British Museum, the British Library and the Victoria and Albert Museum. For example, the jade wine cup of Shah Jahan and the crown of Bahadur Shah II are all currently located in London. Various requests for restitution have so far been rejected by the British government.[33]
-
 
 View of the Red Fort from the river (by Ghulam Ali Khan, between c. 1852–1854
 1911 saw the visit of King George V and Queen Mary for the Delhi Durbar. In preparation for their visit, some buildings were restored. The Red Fort Archaeological Museum was moved from the drum house to the Mumtaz Mahal.
@@ -155,7 +79,7 @@ On 15 August 1947, the first Prime Minister of India, Jawaharlal Nehru raised th
 
 After Indian Independence, the site experienced few changes, and the Red Fort continued to be used as a military cantonment. A significant part of the fort remained under Indian Army control until 22 December 2003, when it was given to the Archaeological Survey of India for restoration.[35][36] In 2009 the Comprehensive Conservation and Management Plan (CCMP), prepared by the Archaeological Survey of India under Supreme Court directions to revitalise the fort, was announced.[37][38][39]''',
       images: []),
-  PlanetInfo(8,
+  MonumentsInfo(4,
       name: "Humayun's Tomb ",
       iconImage: 'assets/Tomb.png',
       description:
@@ -177,22 +101,51 @@ During the Partition of India, in August 1947 the Purana Qila together with Huma
 
 An important phase in the restoration of the complex began around 1993, when the monument was declared a World Heritage Site. This brought new interest to its restoration, and a detailed research and excavation process began under the aegis of the Aga Khan Trust and the ASI. This culminated in 2003, when much of the complex and gardens were restored, with the historic fountains running once again after several centuries of disuse. The restoration has been a continuous process ever since, with subsequent phases addressing various aspects and monuments of the complex.[17]''',
       images: []),
-  PlanetInfo(9,
-      name: "Ellora Caves ",
-      iconImage: 'assets/Cave.png',
+  MonumentsInfo(5,
+      name: 'GateWay',
+      iconImage: 'assets/GateWay.png',
       description:
-          '''Ellora is a UNESCO World Heritage Site located in the Aurangabad district of Maharashtra, India. It is one of the largest rock-cut Hindu temple cave complexes in the world, with artwork dating from the period 600–1000 CE.[1][2] Cave 16 features the largest single monolithic rock excavation in the world, the Kailash temple, a chariot-shaped monument dedicated to the god Shiva. The Kailash temple excavation also features sculptures depicting various Hindu deities as well as relief panels summarizing the two major Hindu epics.
+          '''The Gateway of India is an arch-monument built in the early 20th century in the city of Mumbai, India. It was erected to commemorate the landing of King-Emperor George V, the first British monarch to visit India, in December 1911 at Ramchandani Road near Shyamaprasad Mukherjee Chowk.
 
-There are over 100 caves at the site, all excavated from the basalt cliffs in the Charanandri Hills, 34 of which are open to public.[3] These consist of 17 Hindu (caves 13–29), 12 Buddhist (caves 1–12) and 5 Jain (caves 30–34) caves,[4][5] each group representing deities and mythologies prevalent in the 1st millennium CE, as well as monasteries of each respective religion.[4] They were built close to one another and illustrate the religious harmony that existed in ancient India.[2][6] All of the Ellora monuments were built during the Rashtrakuta dynasty, which constructed part of the Hindu and Buddhist caves, and the Yadava dynasty, which constructed a number of the Jain caves. Funding for the construction of the monuments was provided by royals, traders and the wealthy of the region.[3][7]
+The foundation stone was laid in March 1913 for a monument built in the Indo-Islamic style, inspiring by elements of 16th-century Gujarati architecture. The final design of the monument by architect George Wittet was sanctioned only in 1914, and construction was completed in 1924. The structure is a memorial arch made of basalt, which is 26 metres (85 feet) high, with an architectural resemblance to a triumphial arch as well as Gujarati architecture of the time.
 
-Although the caves served as temples and a rest stop for pilgrims,[5] the site's location on an ancient South Asian trade route also made it an important commercial centre in the Deccan region.[8] It is 29 kilometres (18 miles) north-west of Sambhaji Nagar, and about 300 kilometres (190 miles) east-northeast of Mumbai. Today, the Ellora Caves, along with the nearby Ajanta Caves, are a major tourist attraction in the Marathwada region of Maharashtra and a protected monument under the Archaeological Survey of India (ASI).[9]
+After its construction the Gateway was used as a symbolic ceremonial entrance to India for important colonial personnel. The Gateway is also the monument from where the last British troops left India in 1948, following Indian independence. It is located on the waterfront at an angle, opposite the Taj Mahal Palace and Tower Hotel and overlooks the Arabian Sea. Today, the monument is synonymous with the city of Mumbai, and is amongst its prime tourist attractions. The gateway is also a gathering spot for locals, street vendors, and photographers soliciting services. It holds significance for the local Jewish community as it has been the spot for Hanukkah celebrations, with the lighting of the menorah, since 2003. There are five jetties located at the Gateway, of which two are used for commercial ferry operations.
 
-Ellora, also called Verul or Elura, is the short form of the ancient name Elloorpuram.[10] The older form of the name has been found in ancient references such as the Baroda inscription of 812 CE which mentions "the greatness of this edifice" and that "this great edifice was built on a hill by Krishnaraja at Elapura, the edifice in the inscription being the Kailasa temple.[3] In the Indian tradition, each cave is named and has a suffix Guha (Sanskrit), Lena or Leni (Marathi), meaning cave.[3][11]
+The Gateway was the site of a terror attack in August 2003, when there was a bomb blast in a taxi parked in front of it. Access to the gateway was restricted after people congregated at its premises following the 2008 Mumbai terror attacks, in which the Taj Hotel opposite the gateway and other locations in its vicinity were targeted.
 
-It is many a times also thought to be derived from Ilvalapuram, named after the asura Ilvala who ruled this region who was vanquished by Sage Agastya.[12]
+In March 2019, the Maharashtra state government proposed a four-step plan to develop the location for the convenience of tourists, following a direction issued by the state governor in February 2019.
 
-The construction at Ellora has been studied since British colonial rule. However, the overlapping styles between the Buddhist, Hindu and Jain caves has made it difficult to establish agreement concerning the chronology of their construction.[14] The disputes generally concern: one, whether the Buddhist or Hindu caves were carved first and, two, the relative dating of caves within a particular tradition. The broad consensus that has emerged is based on comparing the carving styles at Ellora to other cave temples in the Deccan region that have been dated, textual records of various dynasties, and epigraphical evidence found at various archaeological sites near Ellora and elsewhere in Maharashtra, Madhya Pradesh and Karnataka.[15][16] Geri Hockfield Malandra and other scholars[who?] have stated that the Ellora caves had three important building periods: an early Hindu period (~550 to 600 CE), a Buddhist phase (~600 to 730 CE) and a later Hindu and Jain phase (~730 to 950 CE).[15][17][18]
-
-The earliest caves may have been built during the Traikutakas and Vakataka dynasties, the latter being known for sponsoring the Ajanta caves. However, it is considered likely that some of the earliest caves, such as Cave 29 (Hindu), were built by the Shiva-inspired Kalachuri dynasty, while the Buddhist caves were built by the Chalukya dynasty.[15] The later Hindu caves and early Jain caves were built by the Rashtrakuta dynasty, while the last Jain caves were built by the Yadava dynasty, which had also sponsored other Jain cave temples.[19][20][21]''',
+''',
       images: []),
+  MonumentsInfo(6,
+      name: 'Uthirakosamangai Temple',
+      iconImage: 'assets/Uthira2.png',
+      description:
+          '''Uthirakosamangai, also known as Mangalanatha Swamy temple, is a Shaiva temple situated near Ramanathapuram in the Ramanathapuram district of Tamil Nadu. The temple is much older and the structure as it exists today is believed to be built by the Pandya kings, Achutappa Nayak (1529–1542 CE), Muthuveerappar and other kings of Ramanthapuram at various times. The temple has been glorified by the hymns of 9th-century saint Manickavasagar and 15th-century saint Arunagirinathar. 
+The temple is considered sacred along the lines of Ramanathapuram, Sethu Madhava Theertham and Lakshmana Theertham. The temple is a prominent tourist destination of Ramanathapuram district. 
+The temple has numerous shrines, with those of Mangalanathar, Mangalambigai and Natarajar being the most prominent. The temple houses a 6 ft (1.8 m) tall ancient maragatha Nataraja idol carved out of emerald, being the one of its kind. The temple has six daily rituals at various times from 5:30 a.m. to 8 p.m., and six yearly festivals on its calendar. The temple is maintained and administered by the Hindu Religious and Endowment Board of the Government of Tamil Nadu.
+
+As per Hindu legend, once hundreds of rishis (ascetics) performed penance worshipping Shiva. Shiva told the rishis that he would appear in the form of a fireball to acknowledge the penance of Mandothari, the wife of king Ravana in Sri Lanka. Shiva appeared in the form a small child in Ravana's palace. Ravana lifted the beautiful child and there was a small wound out of it. Simultaneously, there was a fireball out of the Agni Theertham (temple tank), which the rishis felt were on account of Shiva attacking Ravana. Out of thousand, 999 killed themselves by falling in the fire, while one of them remained to save the vedic books. Shiva was pleased by the rishi and appeared as Sahasralingam (thousand lingams) for the 999 and one more for himself in the temple. The single rishi was believed to have emerged later as Manickavasgar in his later birth. 
+''',
+      images: []),
+  MonumentsInfo(7,
+      name: 'Charminar',
+      iconImage: 'assets/Charminar.png',
+      description:
+          '''Charminar is one of the greatest monuments situated in India that has immense significance. It was constructed in the year 1591 and has been standing tall since then as the popular icon of Hyderabad. It also has a mosque in its architecture representing the Indo-Islamic conglomeration of art and culture. It is the prime tourist attraction in the city that draws a lot of visitors throughout the year. Big festivals like Ramzan are celebrated here in accordance with the government. People from different cultures visit the local markets to witness the beauty of this historic monument during the festive time.
+
+In 1591, Sultan Muhammad Quli Qutub Shah, the ruler of the Qutub Shahi Dynasty, got this monument constructed after he visited this city from Golconda. The prime reason for adding four minarets in the design is to represent four directions. It was also a memoir of his beloved wife, Queen Bhagwati. He saw her for the first time at this location and fell in love. He was also a poet. He prayed using his verses to God for the safety and wellbeing of this monument.
+
+In this Charminar essay, you will find that it is 48.7 meters high. The four towers face one another and hold a long-drawn balcony. This monument is made of limestone, pulverized marbles, and granite. It is estimated that the total weight of this monument is 14,000 tons.
+
+Charminar has a secret tunnel that connects with Golconda Fort. It was built as a safety tunnel and as an escape route for the Sultan and others visiting the fort. Wazu Khana, a place inside the monument, was built where people used to wash their faces and hands before praying. Once it had a fountain in the middle.
+
+Many historians believe that this monument was built to commemorate the end of a deadly plague back then. Some other versions also depict it as is the ‘Arc De Triumph of the East’. The monument is built in the form of a square and has four clocks in every direction. The four minarets represent the four Khalifas of Islam as per some historians. The praying section of the mosque is on the top of this monument. Back then, a madrasa or a school was run on the first floor. The minarets were built to keep an eye on the entire city back then. The city was then constructed surrounding this monument. Since then, the city has flourished. It is the central point of the city. The tourists can see roads coming out of this location and entering the city like a network.
+
+A huge local market can be seen surrounding Charminar. This market is known for its bangles. Laad Bazaar is famous for its local jewelry items. Patther Gatti is a well-known market for pearls. Sarojini Naidu, the Nightingale of India, was born and brought up in this city. She painted an excellent picture of these local markets with her words in the poem ‘In the Bazaars of Hyderabad.
+
+Charminar is an important construction in the diversified history of India. It is the point that earmarks the sultanate rule in the southern part of India. This beautiful construction and architectural elegance draw many tourists from different parts of the world every year.''',
+      images: [
+        'assets/CharminarInside1.jpg',
+      ]),
 ];

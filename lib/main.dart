@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
+import 'package:flutter_universe/user_simple_preferences.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await userSimplePreferences.init();
   runApp(MyApp());
 }
 

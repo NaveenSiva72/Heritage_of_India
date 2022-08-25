@@ -32,6 +32,7 @@ dependencies:
   translator:
   flutter_unity_widget: ^2022.1.7+1
   flutter_map: 
+  shared_preferences:
 
 dev_dependencies:
   flutter_test:
@@ -63,11 +64,12 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+   fonts:
+     - family: Schyler
+       fonts:
+         - asset: fonts/Schyler-Regular.ttf
+         - asset: fonts/Schyler-Italic.ttf
+         - asset: fonts/Calibri_Regular.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

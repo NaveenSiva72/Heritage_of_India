@@ -6,8 +6,12 @@ import 'package:latlong2/latlong.dart';
 const MAPBOX_ACCESS_TOKEN =
     'pk.eyJ1IjoiZGllZ292ZWxvcGVyIiwiYSI6ImNrdGppMnh0bjFjZ3MzMm5sejRtcTlwbTQifQ.lwdbukS6p7bBWBuk2URBKg';
 
-const MAPBOX_STYLE = "mapbox/navigation-night-v1";
+const MAPBOX_STYLE = "mapbox/satellite-v9";
 const MARKER_COLOR = Color.fromARGB(255, 24, 200, 162);
+
+const MARKER_SIZE_EXPANDED = 55.0;
+const MARKER_SIZE_SHRINKED = 38.5;
+
 final _myLocation = LatLng(27.175014, 78.042152);
 
 class AnimatedMarkersMap extends StatefulWidget {
@@ -17,9 +21,12 @@ class AnimatedMarkersMap extends StatefulWidget {
   State<AnimatedMarkersMap> createState() => _AnimatedMarkersMapState();
 }
 
-class _AnimatedMarkersMapState extends State<AnimatedMarkersMap> {
+class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
+    with SingleTickerProviderStateMixin {
   final _pageController = PageController();
+  AnimationController _animationController;
 
+  int _selectedIndex = 0;
   //list to show png images
   List<Marker> _buildmarkers() {
     final _markerList = <Marker>[];
@@ -27,23 +34,45 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap> {
       final mapItem = mapMarkers[i];
       _markerList.add(
         Marker(
-          height: 40,
-          width: 40,
+          height: MARKER_SIZE_EXPANDED,
+          width: MARKER_SIZE_EXPANDED,
           point: mapItem.location,
           builder: (_) {
             //when ever a location tapped a pagecounter will popo or move to particular location source
 
             return GestureDetector(
               onTap: () {
-                print('Selected: ${mapItem.title}');
+                _selectedIndex = i;
+                setState(() {
+                  _pageController.animateToPage(i,
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.elasticOut);
+                  print('Selected: ${mapItem.title}');
+                });
               },
-              child: Image.asset('assets/location.png'),
+              child: _LocationMarker(
+                selected: _selectedIndex == i,
+              ),
             );
           },
         ),
       );
     }
     return _markerList;
+  }
+
+  @override
+  void initState() {
+    _animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _animationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -59,7 +88,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap> {
               options: MapOptions(
                 minZoom: 5,
                 maxZoom: 50,
-                zoom: 13,
+                zoom: 1,
                 center: _myLocation,
               ),
               nonRotatedLayers: [
@@ -91,6 +120,8 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap> {
               bottom: 20,
               height: MediaQuery.of(context).size.height * 0.3,
               child: PageView.builder(
+                  controller: _pageController,
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: mapMarkers.length,
                   itemBuilder: (context, index) {
                     final item = mapMarkers[index];
@@ -101,6 +132,24 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap> {
             )
           ],
         ));
+  }
+}
+
+class _LocationMarker extends StatelessWidget {
+  const _LocationMarker({Key key, this.selected = false}) : super(key: key);
+
+  final bool selected;
+  @override
+  Widget build(BuildContext context) {
+    final size = selected ? MARKER_SIZE_EXPANDED : MARKER_SIZE_SHRINKED;
+    return Center(
+      child: AnimatedContainer(
+        height: size,
+        width: size,
+        duration: const Duration(milliseconds: 400),
+        child: Image.asset('assets/location.png'),
+      ),
+    );
   }
 }
 
@@ -131,6 +180,7 @@ class _MapItemDetails extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: Card(
+          margin: EdgeInsets.zero,
           color: Colors.white,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -161,8 +211,14 @@ class _MapItemDetails extends StatelessWidget {
                 ),
               ),
               MaterialButton(
+                padding: EdgeInsets.zero,
                 onPressed: () => null,
                 color: MARKER_COLOR,
+                elevation: 6,
+                child: Text(
+                  "view In AR",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               )
             ],
           )),
