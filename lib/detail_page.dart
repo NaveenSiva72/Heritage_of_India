@@ -17,6 +17,13 @@ const Alignment centerLeft = Alignment(-1.0, 0.0);
 class _DetailPageState extends State<DetailPage> {
   GoogleTranslator translator = GoogleTranslator();
 
+  @override
+  void didChangeDependencies() {
+    Locale myLocale = Localizations.localeOf(context);
+    print('my locale ${myLocale}');
+    super.didChangeDependencies();
+  }
+
   List<String> items = [
     "English",
     "Tamil",
@@ -179,20 +186,24 @@ class _DetailPageState extends State<DetailPage> {
                         ),
                         Divider(color: Colors.black38),
                         SizedBox(height: 32),
-                        Text(
-                          cont ?? '',
-                          maxLines: 590,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
-                            fontFamily: 'Monserat',
-                            fontSize: 16,
-                            color: contentTextColor,
-                            fontWeight: FontWeight.w500,
-                            height: 1.5,
-                            letterSpacing: 0.1,
+                        Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Text(
+                            cont ?? '',
+                            maxLines: 590,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                              fontFamily: 'Monserat',
+                              fontSize: 16,
+                              color: contentTextColor,
+                              fontWeight: FontWeight.w500,
+                              height: 1.5,
+                              letterSpacing: 0.1,
+                            ),
                           ),
                         ),
+
                         SizedBox(height: 32),
                         Divider(color: Colors.black38),
                       ],
