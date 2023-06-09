@@ -1,6 +1,7 @@
 class MonumentsInfo {
   final int position;
   final String name;
+  final String namee;
   final String iconImage;
   String description;
   final List<String> images;
@@ -8,22 +9,28 @@ class MonumentsInfo {
   MonumentsInfo(
     this.position, {
     this.name,
+    this.namee,
     this.iconImage,
     this.description,
     this.images,
   });
 }
 
-List<MonumentsInfo> planets = [
+List<MonumentsInfo> Monuments = [
   MonumentsInfo(1,
       name: 'Konark',
+      namee: 'Chapter 1.1',
       iconImage: 'assets/Konark.png',
       description:
           '''           The Sun Temple at Konârak, located on the eastern shores of the Indian subcontinent, is one of the outstanding examples of temple architecture and art as revealed in its conception, scale and proportion, and in the sublime narrative strength of its sculptural embellishment. It is an outstanding testimony to the 13th-century kingdom of Orissa and a monumental example of the personification of divinity, thus forming an invaluable link in the history of the diffusion of the cult of Surya,the Sun God. In this sense, it is directly and materially linked to Brahmanism and tantricbelief systems. The Sun Temple is the culmination of Kalingan temple architecture, with all its defining elements in complete and perfect form. A masterpiece of creative genius in both conception and realisation, the temple represents a chariot of the Sun God, with twelve pairs of wheels drawn by seven horses evoking its movement across the heavens. It is embellished with sophisticated and refined iconographical depictions of contemporary life and activities. On the north and south sides are 24 carved wheels, each about 3 m in diameter, as well as symbolic motifs referring to the cycle of the seasons and the months. These complete the illusionary structure of the temple-chariot. Between the wheels, the plinth of the temple is entirely decorated with reliefs of fantastic lions, musicians and dancers, and erotic groups. Like many Indian temples, the Sun Temple comprises several distinct and well-organized spatial units. The vimana (principal sanctuary) was surmounted by a high tower with a shikhara (crowning cap), which was razed in the 19th century. To the east, the jahamogana (audience hall) dominates the ruins with its pyramidal mass. Farther to the east, the natmandir (dance hall), today unroofed, rises on a high platform. Various subsidiary structures are still to be found within the enclosed area of the rectangular wall, which is punctuated by gates and towers.The Sun Temple is an exceptional testimony, in physical form, to the 13th-century Hindu Kingdom of Orissa, under the reign of Narasimha Deva I (AD 1238-1264). Its scale, refinement and conception represent the strength and stability of the Ganga Empire as well as the value systems of the historic milieu. Its aesthetical and visually overwhelming sculptural narratives are today an invaluable window into the religious, political, social and secular life of the people of that period. The Sun Templeis directly associated with the idea and belief of the personification of the Sun God, which is adumbrated in the Vedas and classical texts. The Sun is personified as a divine being with a history, ancestry, family, wives and progeny, and as such, plays a very prominent role in the myths and legends of creation. Furthermore, it is associated with all the legends of its own artistic creation – the most evocative being its construction over twelve years using 1,200 artisans – and the stories about the deep commitment of its master builder, Bisu Moharana, to the project, in which his son (who was born during this period) later became involved. Konârak’s location and name are important testimonies to all the above associations, and its architectural realisation is associated with the living traditions of Brahmanismand tantricpractices.
 ''',
-      images: []),
+      images: [
+        'assets/KonarkInside1.jpg',
+        'assets/KonarkInside2.jpg',
+      ]),
   MonumentsInfo(2,
       name: 'TajMahal',
+      namee: 'Chapter 1.2',
       iconImage: 'assets/TajMahal.png',
       description:
           '''The Taj Mahal is located on the right bank of the Yamuna River in a vast Mughal garden that encompasses nearly 17 hectares, in the Agra District in Uttar Pradesh. It was built by Mughal Emperor Shah Jahan in memory of his wife Mumtaz Mahal with construction starting in 1632 AD and completed in 1648 AD, with the mosque, the guest house and the main gateway on the south, the outer courtyard and its cloisters were added subsequently and completed in 1653 AD. The existence of several historical and Quaranic inscriptions in Arabic script have facilitated setting the chronology of Taj Mahal. For its construction, masons, stone-cutters, inlayers, carvers, painters, calligraphers, dome builders and other artisans were requisitioned from the whole of the empire and also from the Central Asia and Iran. Ustad-Ahmad Lahori was the main architect of the Taj Mahal.
@@ -42,6 +49,7 @@ Criterion (i): Taj Mahal represents the finest architectural and artistic achiev
       images: []),
   MonumentsInfo(3,
       name: 'Red Fort',
+      namee: 'Chapter 1.3',
       iconImage: 'assets/RedFort.png',
       description:
           '''Emperor Shah Jahan commissioned construction of the Red Fort on 12 May 1638, when he decided to shift his capital from Agra to Delhi. Originally red and white, Shah Jahan's favourite colours,[7] its design is credited to architect Ustad Ahmad Lahori, who also constructed the Taj Mahal.[8][9] The fort lies along the Yamuna River, which fed the moats surrounding most of the walls.[10] Construction began in the sacred Islamic month of Muharram, on 13 May 1638.[11]: 01  Supervised by Shah Jahan, it was completed on 6 April 1648.[12][13][14] Unlike other Mughal forts, the Red Fort's boundary walls are asymmetrical to contain the older Salimgarh Fort.[11]: 04  The fortress-palace was a focal point of the city of Shahjahanabad, which is present-day Old Delhi. Shah Jahan's successor, Aurangzeb, added the Moti Masjid (Pearl Mosque) to the emperor's private quarters, constructing barbicans in front of the two main gates to make the entrance to the palace more circuitous.[11]: 08 
@@ -81,6 +89,7 @@ After Indian Independence, the site experienced few changes, and the Red Fort co
       images: []),
   MonumentsInfo(4,
       name: "Humayun's Tomb ",
+      namee: 'Chapter 1.4',
       iconImage: 'assets/Tomb.png',
       description:
           '''After his death on 27 January 1556, Humayun's body was first buried in his palace in Purana Quila at Delhi. Thereafter it was taken to Sirhind, in Punjab by Khanjar Beg and, in 1558, it was seen by Humayun's son, the then Mughal Emperor, Akbar. Akbar subsequently visited the tomb in 1571, when it was about to be completed.[24][25][26]
@@ -103,6 +112,7 @@ An important phase in the restoration of the complex began around 1993, when the
       images: []),
   MonumentsInfo(5,
       name: 'GateWay',
+      namee: 'Chapter 1.5',
       iconImage: 'assets/GateWay.png',
       description:
           '''The Gateway of India is an arch-monument built in the early 20th century in the city of Mumbai, India. It was erected to commemorate the landing of King-Emperor George V, the first British monarch to visit India, in December 1911 at Ramchandani Road near Shyamaprasad Mukherjee Chowk.
@@ -118,8 +128,9 @@ In March 2019, the Maharashtra state government proposed a four-step plan to dev
 ''',
       images: []),
   MonumentsInfo(6,
-      name: 'Uthirakosamangai Temple',
-      iconImage: 'assets/Uthira2.png',
+      name: 'UthiraTemple',
+      namee: 'Chapter 1.6',
+      iconImage: 'assets/Uthira.png',
       description:
           '''Uthirakosamangai, also known as Mangalanatha Swamy temple, is a Shaiva temple situated near Ramanathapuram in the Ramanathapuram district of Tamil Nadu. The temple is much older and the structure as it exists today is believed to be built by the Pandya kings, Achutappa Nayak (1529–1542 CE), Muthuveerappar and other kings of Ramanthapuram at various times. The temple has been glorified by the hymns of 9th-century saint Manickavasagar and 15th-century saint Arunagirinathar. 
 The temple is considered sacred along the lines of Ramanathapuram, Sethu Madhava Theertham and Lakshmana Theertham. The temple is a prominent tourist destination of Ramanathapuram district. 
@@ -130,6 +141,7 @@ As per Hindu legend, once hundreds of rishis (ascetics) performed penance worshi
       images: []),
   MonumentsInfo(7,
       name: 'Charminar',
+      namee: 'Chapter 1.7',
       iconImage: 'assets/Charminar.png',
       description:
           '''Charminar is one of the greatest monuments situated in India that has immense significance. It was constructed in the year 1591 and has been standing tall since then as the popular icon of Hyderabad. It also has a mosque in its architecture representing the Indo-Islamic conglomeration of art and culture. It is the prime tourist attraction in the city that draws a lot of visitors throughout the year. Big festivals like Ramzan are celebrated here in accordance with the government. People from different cultures visit the local markets to witness the beauty of this historic monument during the festive time.

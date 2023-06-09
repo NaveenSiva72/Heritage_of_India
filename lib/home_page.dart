@@ -15,8 +15,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<String> items = ["Chapter-1", "Chapter-2"];
-  String selectedItem = "Chapter-1";
+  List<String> items = ["Module-1 : Monuments", "Module-2 : Artifacts"];
+  String selectedItem = "Module-1 : Monuments";
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,9 @@ class _HomePageState extends State<HomePage> {
         });
       },
       style: new TextStyle(
-        color: Color.fromARGB(255, 13, 106, 187),
+        color: Color.fromARGB(255, 0, 0, 0),
+        fontSize: 15,
+        fontWeight: FontWeight.w500,
       ),
     );
 
@@ -79,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                 height: 500,
                 padding: const EdgeInsets.only(left: 32),
                 child: Swiper(
-                  itemCount: planets.length,
+                  itemCount: Monuments.length,
                   itemWidth: MediaQuery.of(context).size.width - 2 * 64,
                   layout: SwiperLayout.STACK,
                   pagination: SwiperPagination(
@@ -93,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                           context,
                           PageRouteBuilder(
                             pageBuilder: (context, a, b) => DetailPage(
-                              monumentsInfo: planets[index],
+                              monumentsInfo: Monuments[index],
                             ),
                           ),
                         );
@@ -117,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                                     children: <Widget>[
                                       SizedBox(height: 100),
                                       Text(
-                                        planets[index].name,
+                                        Monuments[index].name,
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
                                           fontSize: 35,
@@ -127,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                                         textAlign: TextAlign.left,
                                       ),
                                       Text(
-                                        'Chapter-1',
+                                        Monuments[index].namee,
                                         style: TextStyle(
                                           fontFamily: 'Avenir',
                                           fontSize: 17,
@@ -140,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                                       Row(
                                         children: <Widget>[
                                           Text(
-                                            'Description',
+                                            'Go to Lesson',
                                             style: TextStyle(
                                               fontFamily: 'Avenir',
                                               fontSize: 18,
@@ -162,15 +164,15 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                           Hero(
-                            tag: planets[index].position,
-                            child: Image.asset(planets[index].iconImage,
+                            tag: Monuments[index].position,
+                            child: Image.asset(Monuments[index].iconImage,
                                 width: 200),
                           ),
                           Positioned(
                             right: 24,
                             bottom: 60,
                             child: Text(
-                              planets[index].position.toString(),
+                              Monuments[index].position.toString(),
                               style: TextStyle(
                                 fontFamily: 'Avenir',
                                 fontSize: 200,
@@ -193,7 +195,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.vertical(
-            top: Radius.circular(36.0),
+            top: Radius.circular(0),
           ),
           color: navigationColor,
         ),
@@ -213,11 +215,11 @@ class _HomePageState extends State<HomePage> {
               },
             ),
             IconButton(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.map_outlined),
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    //builder: (context) => MainAnimatedMarkersMap()));
-                    builder: (context) => suppaExample()));
+                    builder: (context) => MainAnimatedMarkersMap()));
+                //builder: (context) => suppaExample()));
               },
             ),
           ],
@@ -228,7 +230,7 @@ class _HomePageState extends State<HomePage> {
 
   onSelected(BuildContext context, selectedItem) {
     switch (selectedItem) {
-      case "Chapter-2":
+      case "Module-2 : Artifacts":
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (context) => artifactHomePage()));
 

@@ -20,7 +20,7 @@ class _DetailPageState extends State<DetailPage> {
   @override
   void didChangeDependencies() {
     Locale myLocale = Localizations.localeOf(context);
-    print('my locale ${myLocale}');
+    print('my locale ${myLocale}' + "kiruthika is myjhgegghgfcx");
     super.didChangeDependencies();
   }
 
@@ -51,7 +51,6 @@ class _DetailPageState extends State<DetailPage> {
           ErrorText = "select a language";
           break;
         case "English":
-          print(cont);
           await translator
               .translate(widget.monumentsInfo.description, to: "en")
               .then((value) {

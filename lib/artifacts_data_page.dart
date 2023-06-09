@@ -5,6 +5,7 @@ class ArtifactsInfo {
   final int position3;
   final String name1;
   final String Name;
+  final String namee;
   final String iconImage1;
   final String description1;
   final String description2;
@@ -25,6 +26,7 @@ class ArtifactsInfo {
     this.position3, {
     this.name1,
     this.Name,
+    this.namee,
     this.iconImage,
     this.iconImage1,
     this.description1,
@@ -48,6 +50,7 @@ List<ArtifactsInfo> planets = [
     1, 2, 3,
     Name: 'Music',
     name1: 'Ancient Flute',
+    namee: 'Chapter 2.1',
     iconImage: 'assets/Instruments.png',
     iconImage1: 'assets/Flute.png',
     // iconImage2:'d.png',
@@ -71,12 +74,12 @@ The beautiful resonance of the sitar comes from its sympathetic strings and long
 The Indian theory traces the origin of tabla to indigenous ancient civilization. The stone sculpture carvings in Bhaja Caves depict a woman playing a pair of drums, which some have claimed as evidence for the ancient origin of the tabla in India. 
 
 ''',
-    images1: ['assets/Sitar.png'],
+    images1: [],
   ),
-  ArtifactsInfo(2,
-   1, 2, 3,
+  ArtifactsInfo(2, 1, 2, 3,
       Name: 'Paintings',
       iconImage: 'assets/Paintings.png',
+      namee: 'Chapter 2.2',
       name1: "Ajanta Cave Painting",
       iconImage1: 'assets/CavePainting.png',
       description1:
@@ -89,17 +92,17 @@ The Indian theory traces the origin of tabla to indigenous ancient civilization.
 This whimsical oil on canvas piece, titled “Shakuntala – Looks of Love”, is by the Malayali Indian artist, Raja Ravi Varma, from 1870. It depicts Shakuntala, a character from the ‘Mahabaratha’, one of the two major Sanskrit epic stories from India. She is the mother of Emperor Bharata who founded the Bhārata dynasty.
 In this piece, Varma painted Shakuntala as she pretends to remove a thorn from her foot. Secretly, Shakuntala is looking for her lover, Dushyantha.“Shakuntala – Looks of Love” is currently on display at the Sri Chitra Art GallerSri Chitra Art Gallery in Trivandrum, Kerala, India along with many other of his works.
 ''',
-name3: "Ravi Varma Paintings-Shakuntala",
+      name3: "Ravi Varma Paintings-Shakuntala",
       iconImage3: 'assets/RaviVarma.png',
       description3: '''
 This whimsical oil on canvas piece, titled “Shakuntala – Looks of Love”, is by the Malayali Indian artist, Raja Ravi Varma, from 1870. It depicts Shakuntala, a character from the ‘Mahabaratha’, one of the two major Sanskrit epic stories from India. She is the mother of Emperor Bharata who founded the Bhārata dynasty.
 In this piece, Varma painted Shakuntala as she pretends to remove a thorn from her foot. Secretly, Shakuntala is looking for her lover, Dushyantha.“Shakuntala – Looks of Love” is currently on display at the Sri Chitra Art GallerSri Chitra Art Gallery in Trivandrum, Kerala, India along with many other of his works.
 ''',
-  
       images1: []),
   ArtifactsInfo(3, 1, 2, 3,
       Name: 'Sculpture',
       iconImage: 'assets/Sculpture.png',
+      namee: 'Chapter 2.3',
       name1: 'Standing Parvathi',
       iconImage1: 'assets/parvathi.png',
       description1:
@@ -123,6 +126,7 @@ In the Nataraja sculpture, Shiva is shown as the source of all movement within t
   ArtifactsInfo(4, 1, 2, 3,
       Name: '''Ancient Remains''',
       iconImage: 'assets/Pot.png',
+      namee: 'Chapter 2.4',
       name1: 'Harappa',
       iconImage1: 'assets/Cart.png',
       description1:

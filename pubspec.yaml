@@ -33,10 +33,20 @@ dependencies:
   flutter_unity_widget: ^2022.1.7+1
   flutter_map: 
   shared_preferences:
+  get: ^4.1.4
+  flutter_svg: ^1.1.4
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons:
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/AR.jpeg"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

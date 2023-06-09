@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_universe/data.dart';
 import 'package:flutter_universe/home_page.dart';
 import 'artifacts_data_page.dart';
 import 'color.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'artifacts_detail_page.dart';
+import 'main_animated_markers_map.dart.dart';
+import 'samplescenepage.dart';
 
 class artifactHomePage extends StatefulWidget {
   @override
@@ -11,8 +14,8 @@ class artifactHomePage extends StatefulWidget {
 }
 
 class _artifactHomePageState extends State<artifactHomePage> {
-  List<String> items = ["Monuments", "Artefacts"];
-  String selectedItem = "Monuments";
+  List<String> items = ["Module-1: Monuments", "Module-2: Artifacts"];
+  String selectedItem = "Module-2: Artifacts";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,10 +36,10 @@ class _artifactHomePageState extends State<artifactHomePage> {
                 child: Column(
                   children: <Widget>[
                     Text(
-                      'Artefacts',
+                      'Artifacts',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
-                        fontSize: 44,
+                        fontSize: 30,
                         color: Colors.white,
                         fontWeight: FontWeight.w900,
                       ),
@@ -53,7 +56,7 @@ class _artifactHomePageState extends State<artifactHomePage> {
                               items,
                               style: TextStyle(
                                 fontFamily: 'Avenir',
-                                fontSize: 17,
+                                fontSize: 20,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -64,6 +67,11 @@ class _artifactHomePageState extends State<artifactHomePage> {
                             selectedItem = newValue;
                             onSelected(context, selectedItem);
                           });
+                          style:
+                          new TextStyle(
+                            color: Color.fromARGB(255, 13, 106, 187),
+                            fontSize: 20,
+                          );
                         }),
                     //dropdown ended..........
                   ],
@@ -122,7 +130,7 @@ class _artifactHomePageState extends State<artifactHomePage> {
                                         textAlign: TextAlign.left,
                                       ),
                                       Text(
-                                        'Artefacts',
+                                        Monuments[index].namee,
                                         style: TextStyle(
                                           fontFamily: 'Montserrat',
                                           fontSize: 17,
@@ -135,7 +143,7 @@ class _artifactHomePageState extends State<artifactHomePage> {
                                       Row(
                                         children: <Widget>[
                                           Text(
-                                            'Description',
+                                            'Go to Lesson',
                                             style: TextStyle(
                                               fontFamily: 'Montserrat',
                                               fontSize: 18,
@@ -195,21 +203,28 @@ class _artifactHomePageState extends State<artifactHomePage> {
           ),
           color: navigationColor,
         ),
-        padding: const EdgeInsets.all(5),
+        padding: const EdgeInsets.all(14),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             IconButton(
-              icon: Image.asset('assets/menu_icon.png'),
+              icon: Icon(Icons.home),
               onPressed: () {},
             ),
             IconButton(
-              icon: Image.asset('assets/search_icon.png'),
-              onPressed: () {},
+              icon: Icon(Icons.view_in_ar),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => SimpleScreen(pageIndex: "0")));
+              },
             ),
             IconButton(
-              icon: Image.asset('assets/profile_icon.png'),
-              onPressed: () {},
+              icon: Icon(Icons.map_outlined),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => MainAnimatedMarkersMap()));
+                // builder: (context) => suppaExample()));
+              },
             ),
           ],
         ),
@@ -219,7 +234,7 @@ class _artifactHomePageState extends State<artifactHomePage> {
 
   onSelected(BuildContext context, selectedItem) {
     switch (selectedItem) {
-      case "Monuments":
+      case "Module-1: Monuments":
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (context) => HomePage()));
 

@@ -80,7 +80,7 @@ class _AnimatedMarkersMapState extends State<AnimatedMarkersMap>
     final _markers = _buildmarkers();
     return Scaffold(
         appBar: AppBar(
-          title: Text('Animated Markers'),
+          title: Text('Map view'),
         ),
         body: Stack(
           children: [
@@ -212,7 +212,7 @@ class _MapItemDetails extends StatelessWidget {
               ),
               MaterialButton(
                 padding: EdgeInsets.zero,
-                onPressed: () => null,
+                onPressed: () => goToARView(),
                 color: MARKER_COLOR,
                 elevation: 6,
                 child: Text(
@@ -224,4 +224,8 @@ class _MapItemDetails extends StatelessWidget {
           )),
     );
   }
+
+}
+
+goToARView() {
 }

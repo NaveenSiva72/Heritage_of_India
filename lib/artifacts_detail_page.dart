@@ -143,6 +143,10 @@ class _artifactDetailPageState extends State<artifactDetailPage> {
       }
     }
 
+    Future.delayed(Duration(microseconds: 1), () {
+      trans(selectedItem);
+    });
+
     return Scaffold(
       body: SafeArea(
         bottom: false,
@@ -229,15 +233,21 @@ class _artifactDetailPageState extends State<artifactDetailPage> {
                         ),
                         Divider(color: Colors.black38),
                         SizedBox(height: 32),
-                        Text(
-                          cont1 ?? '',
-                          maxLines: 590,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Avenir',
-                            fontSize: 20,
-                            color: contentTextColor,
-                            fontWeight: FontWeight.w500,
+                        Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Text(
+                            cont1 ?? '',
+                            maxLines: 590,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                              fontFamily: 'Monserat',
+                              fontSize: 16,
+                              color: contentTextColor,
+                              fontWeight: FontWeight.w500,
+                              height: 1.5,
+                              letterSpacing: 0.1,
+                            ),
                           ),
                         ),
                         SizedBox(height: 32),
@@ -337,15 +347,21 @@ class _artifactDetailPageState extends State<artifactDetailPage> {
                         ),
                         Divider(color: Colors.black38),
                         SizedBox(height: 32),
-                        Text(
-                          cont2 ?? '',
-                          maxLines: 590,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Avenir',
-                            fontSize: 20,
-                            color: contentTextColor,
-                            fontWeight: FontWeight.w500,
+                        Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Text(
+                            cont2 ?? '',
+                            maxLines: 590,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                              fontFamily: 'Monserat',
+                              fontSize: 16,
+                              color: contentTextColor,
+                              fontWeight: FontWeight.w500,
+                              height: 1.5,
+                              letterSpacing: 0.1,
+                            ),
                           ),
                         ),
                         SizedBox(height: 32),
@@ -447,15 +463,21 @@ class _artifactDetailPageState extends State<artifactDetailPage> {
                         ),
                         Divider(color: Colors.black38),
                         SizedBox(height: 32),
-                        Text(
-                          cont3 ?? '',
-                          maxLines: 590,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Avenir',
-                            fontSize: 20,
-                            color: contentTextColor,
-                            fontWeight: FontWeight.w500,
+                        Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Text(
+                            cont3 ?? '',
+                            maxLines: 590,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                              fontFamily: 'Monserat',
+                              fontSize: 16,
+                              color: contentTextColor,
+                              fontWeight: FontWeight.w500,
+                              height: 1.5,
+                              letterSpacing: 0.1,
+                            ),
                           ),
                         ),
                         SizedBox(height: 32),
